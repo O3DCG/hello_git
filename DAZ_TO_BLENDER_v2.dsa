@@ -715,9 +715,6 @@
 		}
 	}
 	function setLock(mynode,flg_lock,flg_fig){
-		if(flg_fig==false && flg_lock==true){
-			part_bone_out(mynode);
-		}
 		var ary = mynode.getNodeChildren(true);
 		if (flg_fig==false){
 			ary.push(mynode);
@@ -1294,6 +1291,7 @@
 			if (isbone){
 				move_bone_children_mesh_for_env(env_ary[i]);
 			}
+			part_bone_out(env_ary[i]);
 			setLock(env_ary[i],true,false);
 			
 			setSubdivAll(env_ary[i],0);
